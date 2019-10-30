@@ -1,19 +1,31 @@
 import React from 'react'
+import { ListItem } from '@material-ui/core'
+import ListItemText from '@material-ui/core/ListItemText';
+import Checkbox from '@material-ui/core/Checkbox';
 
 const Todo = ({ onClick, completed, text, onDelete}) => (
-  <div className='row'>
+  <ListItem className='row todo' style={{      display: 'flex',
+  justifyContent: 'space-between'}}>
       <div
-    onClick={onClick}
+
     style={{
-      textDecoration: completed ? 'line-through' : 'none'
+      textDecoration: completed ? 'line-through' : 'none',
     }}
-  >
-    {text}
+  >         <ListItemText primary={text} secondary={completed ? "Done" : "In progress"} />
+  
   </div>
+  <Checkbox
+        checked={completed}
+        onChange={onClick}
+        value="checkedB"
+        color="primary"
+ 
+      />
      <button onClick={onDelete}>X</button>
-  </div>
+  </ListItem>
   
 )
 
 
 export default Todo
+

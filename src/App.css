@@ -21,3 +21,7 @@
   background-color: whitesmoke;
   cursor: pointer;
 }
+
+.todo:hover {
+  background-color:#d1c4e9;
+}
