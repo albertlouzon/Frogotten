@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Todo = ({ onClick, completed, text, onDelete}) => (
-  <div>
+  <div className='row'>
       <div
     onClick={onClick}
     style={{
