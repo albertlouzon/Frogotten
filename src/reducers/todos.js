@@ -1,4 +1,4 @@
-import axios from 'axios'
+// import axios from 'axios'
 const todos = (state = JSON.parse(localStorage.getItem('todos')) || [],  action) => {
   let result = [];
   switch (action.type) {

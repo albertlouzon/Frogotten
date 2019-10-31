@@ -9,7 +9,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
-import axios from 'axios'
+// import axios from 'axios'
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
@@ -71,7 +71,7 @@ const Todo = ({ onClick, completed, text, onDelete, image }) => {
           <DialogContentText id="alert-dialog-slide-description">
             {completed ? 'The frog already ate this todo' : 'In progress...'}
           </DialogContentText>
-          <img src={image()}></img>
+          <img alt='' src={image()}></img>
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
