@@ -4,6 +4,11 @@
   align-items: center;  
 }
 
+.addTodo {
+  display: flex;
+  justify-content: center;
+}
+
 .mainButton {
   height: 35px;
   border-radius: 10px;
@@ -21,7 +26,40 @@
   background-color: whitesmoke;
   cursor: pointer;
 }
+.frogLetters {
+  color:
+  #69f0ae;  
+}
 
 .todo:hover {
   background-color:#d1c4e9;
+}
+
+.frogIcon{
+  height:136px;
+  background-image: url('./frog0.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  transition: 0.4s;
+}
+
+.frogIcon:hover{
+  transform: scale(1.2)
+}
+
+.frogIcon.isFrogClicked{
+  animation-name: spin;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear; 
+}
+
+@keyframes spin {
+  from {
+      transform:rotate(0deg);
+  }
+  to {
+      transform:rotate(360deg);
+  }
 }

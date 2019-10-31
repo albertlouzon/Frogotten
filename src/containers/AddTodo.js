@@ -2,14 +2,13 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addTodo } from '../actions'
 import TextField from '@material-ui/core/TextField';
-import FlatButton  from '@material-ui/core/Button';
 
 const AddTodo = ({ dispatch }) => {
   let input
   
   return (
     <div>
-      <form id="my-form-id"
+      <form className="addTodo"
         onSubmit={e => {
           e.preventDefault()
           if (!input.value.trim()) {
@@ -32,8 +31,8 @@ const AddTodo = ({ dispatch }) => {
 
 
 
-        <button className="mainButton"  type="submit" form="my-form-id" label="Submit"       //set the buttom type is submit
-           type="submit">Feed the Frog!</button>
+        <button className="mainButton"  type="submit" form="my-form-id" label="Submit"    
+           >Feed the Frog!</button>
       </form>
     </div>
   )

@@ -1,4 +1,4 @@
-let counter = 0
+let counter =  localStorage.getItem('currentId') || 0;
 export const addTodo = text => ({
   type: 'ADD_TODO',
   id: counter++,
@@ -18,6 +18,9 @@ export const toggleTodo = id => ({
 export const deleteTodo = id => ({
   type: 'DELETE_TODO',
   id
+})
+export const fetchImage = () => ({
+  type: 'FETCH_IMAGE',
 })
 export const VisibilityFilters = {
   SHOW_ALL: 'SHOW_ALL',
