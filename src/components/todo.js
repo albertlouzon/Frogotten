@@ -13,7 +13,7 @@ import axios from 'axios'
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
-const Todo = ({ onClick, completed, text, onDelete, image}) => {
+const Todo = ({ onClick, completed, text, onDelete, image }) => {
   console.log('the image: ', image)
   const [open, setOpen] = React.useState(false);
   const handleClickOpen = () => {
@@ -35,51 +35,54 @@ const Todo = ({ onClick, completed, text, onDelete, image}) => {
     setOpen(false);
   };
   return (
-<div>
-<ListItem className='row todo'       onClick={handleClickOpen}
- style={{      display: 'flex',
-  justifyContent: 'space-between'}}>
-      <div
-    style={{
-      textDecoration: completed ? 'line-through' : 'none',
-    }}
-  >         <ListItemText primary={text} secondary={completed ? "" : "In progress"} />
-  
-  </div>
-  <Checkbox
-        checked={completed}
-        onChange={onClick}
-        value="checkedB"
-        color="primary"
- 
-      />
-     <button style={{cursor: 'pointer'}} onClick={onDelete}>X</button>
-  </ListItem>
+    <div>
+      <ListItem className='row todo' onClick={handleClickOpen}
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between'
+        }}>
+        <div
+          style={{
+            textDecoration: completed ? 'line-through' : 'none',
+          }}
+        >         <ListItemText primary={text} secondary={completed ? "" : "In progress"} />
 
-<Dialog
-open={open}
-TransitionComponent={Transition}
-keepMounted
-onClose={handleClose}
-aria-labelledby="alert-dialog-slide-title"
-aria-describedby="alert-dialog-slide-description"
->
-<DialogTitle id="alert-dialog-slide-title">{text}</DialogTitle>
-<DialogContent>
+        </div>
+        <Checkbox
+          checked={completed}
+          onChange={onClick}
+          value="checkedB"
+          color="primary"
+
+        />
+        <button style={{ cursor: 'pointer' }} onClick={onDelete}>X</button>
+      </ListItem>
+
+      <Dialog
+        open={open}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-slide-title"
+        aria-describedby="alert-dialog-slide-description"
+      >
+        <DialogTitle id="alert-dialog-slide-title">{text}</DialogTitle>
+        <DialogContent>
           <DialogContentText id="alert-dialog-slide-description">
-            {completed ?  'The frog already ate this todo' : 'In progress...'}
+            {completed ? 'The frog already ate this todo' : 'In progress...'}
           </DialogContentText>
           <img src={image()}></img>
         </DialogContent>
-<DialogActions>
-  <Button onClick={handleClose} color="primary">
-    Cool
+        <DialogActions>
+          <Button onClick={handleClose} color="primary">
+            Cool
   </Button>
-</DialogActions>
-</Dialog>
-</div>
-  
-)}
+        </DialogActions>
+      </Dialog>
+    </div>
+
+  )
+}
 
 
 export default Todo
